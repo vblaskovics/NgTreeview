@@ -1,0 +1,35 @@
+<div class="ml-5">
+    <ul *ngFor="let data of treeData" class="flex flex-row">
+        <li>
+            <div class="flex flex-row gap-2">
+                <img src="../../assets/arrow.svg" /><img src="../../assets/folder.svg" /><span>{{ data.name }}</span>
+            </div>
+            <ul *ngIf="data.children && data.children.length > 0" class="flex flex-col">
+                <li *ngFor="let childrenData of data.children" class="flex flex-row">
+                    <ul *ngIf="childrenData.children && childrenData.children.length > 0" class="flex flex-row">
+                        <li class="ml-5">
+                            <div class="flex flex-row gap-2">
+                                <img src="../../assets/arrow.svg" /><img src="../../assets/folder.svg" />{{childrenData.name }}
+                            </div>
+                            <ul>
+                               <li *ngFor="let subFolderFiles of childrenData.children" class="ml-10">
+                                <div class="flex flex-row gap-2">
+                                    <img src="../../assets/files.svg" />{{subFolderFiles.name }}
+                                </div>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <ul *ngIf="!childrenData.children">
+                        <li class="ml-5">
+                            <div class="flex flex-row gap-2">
+
+                                <img src="../../assets/files.svg" />{{childrenData.name }}
+                            </div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</div>
