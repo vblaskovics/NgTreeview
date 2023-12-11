@@ -1,0 +1,6 @@
+<div class="flex flex-row gap-2">
+    <img src="../../assets/arrow.svg" *ngIf="dataForTheTree.children && dataForTheTree.children.length > 0" />
+    <img src="../../assets/folder.svg" *ngIf="dataForTheTree.children && dataForTheTree.children.length > 0" />
+    <img src="../../assets/files.svg" *ngIf="!dataForTheTree.children" />
+    <span>{{ dataForTheTree.name }}</span>
+</div>

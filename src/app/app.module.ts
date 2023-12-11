@@ -3,11 +3,13 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { TreeViewComponent } from './tree-view/tree-view.component';
+import { TreeItemComponent } from './tree-view/tree-item/tree-item.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    TreeViewComponent
+    TreeViewComponent,
+    TreeItemComponent
   ],
   imports: [
     BrowserModule
